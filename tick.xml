@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.0">
+    <TriggerPackage>
+        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+            <name>Messaggi Reset Tick</name>
+            <script>resetTick()</script>
+            <triggerType>0</triggerType>
+            <conditonLineDelta>0</conditonLineDelta>
+            <mStayOpen>0</mStayOpen>
+            <mCommand></mCommand>
+            <packageName>tick</packageName>
+            <mFgColor>#ff0000</mFgColor>
+            <mBgColor>#ffff00</mBgColor>
+            <mSoundFile></mSoundFile>
+            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+            <regexCodeList>
+                <string>Il cadavere di (.*) dissolves into a fertile soil\.$</string>
+                <string>^C'e` un'afa qui fuori\.</string>
+                <string>^Comincia a nevicare\.</string>
+                <string>^Fa veramente freddo\.</string>
+                <string>^Ha smesso di nevicare\.</string>
+                <string>^Hai fame\.$</string>
+                <string>^Hai sete\.$</string>
+                <string>^Il cielo si sta annuvolando\.</string>
+                <string>^Il giorno e` iniziato e la luce del sole comincia a splendere\.</string>
+                <string>^Il sole cala lentamente scomparendo dietro l'orizzonte orientale\.</string>
+                <string>^Il sole comincia a sorgere dall'orizzonte\.</string>
+                <string>^Il sole e` esattamente sopra di te\.</string>
+                <string>^Il temporale e` finito, ma piove ancora\.</string>
+                <string>^Inizia a piovere\.</string>
+                <string>^La luna calante comincia a sorgere dall'orizzonte\.</string>
+                <string>^La luna crescente comincia a sorgere dall'orizzonte\.</string>
+                <string>^La luna nuova comincia a sorgere dall'orizzonte\.</string>
+                <string>^La luna piena comincia a sorgere dall'orizzonte\.</string>
+                <string>^La luna tramonta lentamente\.</string>
+                <string>^La notte e` iniziata stendendo il suo velo oscuro\.</string>
+                <string>^La tormenta di pioggia cala piano piano\.</string>
+                <string>^La tormenta si e` calmata, ma nevica ancora\.</string>
+                <string>^Le nuvole se ne stanno andando\.</string>
+                <string>^Oggi e` un po' meno freddo\.</string>
+                <string>^Sei nel mezzo di un accecante temporale\.</string>
+                <string>^Sei nel mezzo di una tormenta\.</string>
+                <string>^Seneca e' meno protetto dal freddo\.</string>
+                <string>^Seneca e' meno protetto dal fuoco\.</string>
+                <string>^Seneca e' meno protetto dall'energia\.</string>
+                <string>^Seneca sembra aver perso il suo aiuto divino\.</string>
+                <string>^Un velo di oscurita` cala nuovamente appena la luna tramonta\.</string>
+                <string>L'aura di luce bianca che circonda (.*) perde intensita'\.$</string>
+                <string>L'aura di luce bianca che ti circonda perde di intensita'\.$</string>
+                <string>L'aura fiammeggiante che circonda (.*) perde intensita'\. $</string>
+            </regexCodeList>
+            <regexCodePropertyList>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+                <integer>1</integer>
+            </regexCodePropertyList>
+        </Trigger>
+    </TriggerPackage>
+    <TimerPackage>
+        <Timer isActive="yes" isFolder="no" isTempTimer="no">
+            <name>graphicalTickTimer</name>
+            <script>tickRefresh()</script>
+            <command></command>
+            <packageName>tick</packageName>
+            <time>00:00:01.000</time>
+        </Timer>
+    </TimerPackage>
+    <AliasPackage>
+        <Alias isActive="yes" isFolder="no">
+            <name>tick</name>
+            <script>expandAlias(&quot;gt mancano &quot; .. tick.time .. &quot; secondi al tick.&quot;)</script>
+            <command></command>
+            <packageName>tick</packageName>
+            <regex>^tick$</regex>
+        </Alias>
+    </AliasPackage>
+    <ActionPackage/>
+    <ScriptPackage>
+        <Script isActive="yes" isFolder="no">
+            <name>tick</name>
+            <packageName>tick</packageName>
+            <script>dofile(getMudletHomeDir() .. "/scripts/tick.lua" )</script>
+            <eventHandlerList/>
+        </Script>
+    </ScriptPackage>
+    <KeyPackage/>
+</MudletPackage>
