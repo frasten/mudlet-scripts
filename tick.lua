@@ -16,6 +16,10 @@ createLabel( "lblTick", width-20, height-16, 20, 13, 0)
 moveWindow("lblTick", width-20, height-16)
 showWindow("lblTick");
 
+-- Intanto che il bug https://bugs.launchpad.net/mudlet/+bug/809413 e'
+-- aperto, abilitiamolo a mano.
+enableTimer("tick")
+
 
 function resetTick()
 	resetStopWatch(tick.id)
